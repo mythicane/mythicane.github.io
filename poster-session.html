@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Poster Session — Greta Perez-Haiek</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="wordmark" href="index.html">Greta Perez-Haiek</a>
+    <button class="menu-btn" aria-label="Toggle menu">
+      <span class="bars"><span></span><span></span><span></span></span>
+      Menu
+    </button>
+  </header>
+
+  <nav class="overlay-nav" aria-label="Primary">
+    <ul class="overlay-nav-list">
+      <li><a href="index.html"><span class="num">01</span> Home</a></li>
+      <li><a href="poster-session.html"><span class="num">02</span> Poster Session</a></li>
+      <li><a href="publications.html"><span class="num">03</span> Publications</a></li>
+      <li><a href="projects.html"><span class="num">04</span> Projects</a></li>
+      <li><a href="fiction.html"><span class="num">05</span> Fiction</a></li>
+      <li><a href="mentorship.html"><span class="num">06</span> Mentorship</a></li>
+      <li><a href="blog.html"><span class="num">07</span> Blog</a></li>
+      <li><a href="gallery.html"><span class="num">08</span> Photo Gallery</a></li>
+    </ul>
+    <div class="overlay-nav-foot">
+      <span>&copy; <span class="js-year"></span> Greta Perez-Haiek</span>
+      <a href="mailto:greta.perezhaiek@gmail.com">greta.perezhaiek@gmail.com</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="eyebrow">02 — Exhibit</div>
+    <h1>Poster Session</h1>
+    <p class="lede">A walk-through hall of posters — click any panel to step up close, then use the arrow keys or the on-screen arrows to move down the row.</p>
+  </div>
+
+  <p class="wrap placeholder-note">Placeholder gallery — swap each <code>.poster-card</code>'s inline gradient colors for a real poster image, and edit the <code>data-title</code>/<code>data-desc</code> attributes with the real title and abstract.</p>
+
+  <div class="poster-grid">
+    <button class="poster-card" data-title="Underwater Docking Under Disturbance" data-desc="On-policy evaluation of ACT and SmolVLA checkpoints for autonomous docking, benchmarked against human-teleop demonstrations collected in open water." data-c1="#c1481d" data-c2="#241811">
+      <div class="poster-frame" style="--pc1:#c1481d;--pc2:#241811"><span class="poster-tag">IROS Workshop</span></div>
+      <div class="poster-meta"><div class="poster-title">Underwater Docking Under Disturbance</div><div class="poster-sub">Extended abstract · 2026</div></div>
+    </button>
+
+    <button class="poster-card" data-title="Embodied at Sea" data-desc="A field report on deploying learned policies on a BlueROV platform across varied Mediterranean field sites." data-c1="#33473a" data-c2="#1b140e">
+      <div class="poster-frame" style="--pc1:#33473a;--pc2:#1b140e"><span class="poster-tag">Field Report</span></div>
+      <div class="poster-meta"><div class="poster-title">Embodied at Sea</div><div class="poster-sub">Workshop poster · 2026</div></div>
+    </button>
+
+    <button class="poster-card" data-title="Reading the Wake" data-desc="A visual/data poster pairing trajectory plots with photographs from the same rollouts — data as document." data-c1="#e2a33e" data-c2="#6b2e14">
+      <div class="poster-frame" style="--pc1:#e2a33e;--pc2:#6b2e14"><span class="poster-tag">Studio</span></div>
+      <div class="poster-meta"><div class="poster-title">Reading the Wake</div><div class="poster-sub">Mixed media · 2025</div></div>
+    </button>
+
+    <button class="poster-card" data-title="Dataset placeholder" data-desc="Add your fourth poster here — title, venue, one-paragraph abstract." data-c1="#a63e18" data-c2="#33473a">
+      <div class="poster-frame" style="--pc1:#a63e18;--pc2:#33473a"><span class="poster-tag">TBD</span></div>
+      <div class="poster-meta"><div class="poster-title">— untitled —</div><div class="poster-sub">Add details</div></div>
+    </button>
+
+    <button class="poster-card" data-title="Dataset placeholder" data-desc="Add your fifth poster here — title, venue, one-paragraph abstract." data-c1="#6b2e14" data-c2="#241811">
+      <div class="poster-frame" style="--pc1:#6b2e14;--pc2:#241811"><span class="poster-tag">TBD</span></div>
+      <div class="poster-meta"><div class="poster-title">— untitled —</div><div class="poster-sub">Add details</div></div>
+    </button>
+
+    <button class="poster-card" data-title="Dataset placeholder" data-desc="Add your sixth poster here — title, venue, one-paragraph abstract." data-c1="#33473a" data-c2="#c1481d">
+      <div class="poster-frame" style="--pc1:#33473a;--pc2:#c1481d"><span class="poster-tag">TBD</span></div>
+      <div class="poster-meta"><div class="poster-title">— untitled —</div><div class="poster-sub">Add details</div></div>
+    </button>
+  </div>
+
+  <div class="lightbox">
+    <button class="lightbox-close" aria-label="Close">&#10005;</button>
+    <button class="lightbox-prev" aria-label="Previous">&#8592;</button>
+    <button class="lightbox-next" aria-label="Next">&#8594;</button>
+    <div class="lightbox-panel">
+      <div class="lightbox-frame"></div>
+      <h3></h3>
+      <p></p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <span>&copy; <span class="js-year"></span> Greta Perez-Haiek</span>
+    <span class="footer-links">
+      <a href="mailto:greta.perezhaiek@gmail.com">Email</a>
+      <a href="https://github.com/mythicane">GitHub</a>
+      <a href="index.html">Home</a>
+    </span>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -304,31 +304,53 @@ body.on-dark .menu-btn { color: #fbf7ee; }
   font-style: italic;
 }
 
-.hero-lines {
-  display: block;
-}
-.hero-lines span {
-  display: block;
-  opacity: 0;
-  transform: translateY(24px);
-  animation: heroLineIn 0.9s cubic-bezier(.2,.7,.2,1) forwards;
-}
-.hero-lines span:nth-child(1) { animation-delay: 0.15s; }
-.hero-lines span:nth-child(2) { animation-delay: 0.32s; }
-.hero-lines span:nth-child(3) { animation-delay: 0.49s; }
-.hero-lines span:nth-child(4) { animation-delay: 0.66s; }
 @keyframes heroLineIn {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.hero p {
+.hero-embodied {
+  font-size: clamp(84px, 18vw, 240px);
+  line-height: 0.88;
+  font-weight: 600;
+  color: #fbf7ee;
+  margin: 0 0 6px;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroLineIn 1s cubic-bezier(.2,.7,.2,1) forwards;
+  animation-delay: 0.1s;
+}
+
+.hero-cycle-line {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 5vw, 56px);
+  font-weight: 500;
+  color: #fbf7ee;
+  margin: 0 0 20px;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroLineIn 1s cubic-bezier(.2,.7,.2,1) forwards;
+  animation-delay: 0.4s;
+}
+
+.cycle-word {
+  display: inline-block;
+  color: #f6e2c2;
+  font-style: italic;
+  transition: opacity 0.32s ease, transform 0.32s ease;
+}
+.cycle-word.swap {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.hero p.hero-sub {
   max-width: 46ch;
   font-size: clamp(15px, 1.6vw, 19px);
   color: rgba(251, 247, 238, 0.88);
   margin: 0;
   opacity: 0;
   animation: heroLineIn 0.9s cubic-bezier(.2,.7,.2,1) forwards;
-  animation-delay: 0.9s;
+  animation-delay: 0.7s;
 }
 
 .scroll-cue {

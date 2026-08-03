@@ -1,5 +1,26 @@
 'use strict';
 
+/* ---------- hero word cycler ---------- */
+
+(function initWordCycle() {
+  const el = document.querySelector('.cycle-word');
+  if (!el) return;
+  const words = (el.dataset.words || el.textContent).split(',').map((w) => w.trim());
+  if (words.length < 2) return;
+
+  let i = words.indexOf(el.textContent.trim());
+  if (i < 0) i = 0;
+
+  setInterval(() => {
+    el.classList.add('swap');
+    setTimeout(() => {
+      i = (i + 1) % words.length;
+      el.textContent = words[i];
+      el.classList.remove('swap');
+    }, 320);
+  }, 2200);
+})();
+
 /* ---------- overlay menu ---------- */
 
 (function initNav() {

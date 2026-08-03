@@ -494,13 +494,38 @@ body.on-dark .menu-btn { color: #fbf7ee; }
   color: var(--rust);
 }
 
+/* Phase entries (degrees, ongoing roles, multi-year stints) render as a
+   vertical bar spanning the item's height, capped with small dots, so a
+   span reads as a duration rather than a single point on the axis. */
 .tl-item.is-phase .tl-marker {
-  width: 10px;
-  height: 10px;
-  left: 4px;
-  border-radius: 50%;
-  background: var(--ink);
+  left: 7px;
+  top: 5px;
+  bottom: 5px;
+  width: 3px;
+  height: auto;
+  border-radius: 2px;
+  background: var(--rust-dim);
 }
+.tl-item.is-phase .tl-marker::before,
+.tl-item.is-phase .tl-marker::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: inherit;
+  transform: translateX(-50%);
+}
+.tl-item.is-phase .tl-marker::before { top: -2px; }
+.tl-item.is-phase .tl-marker::after { bottom: -2px; }
+
+/* Open-ended ("...–present") phases fade out at the bottom instead of
+   capping, to signal the span is still ongoing. */
+.tl-item.is-phase.is-ongoing .tl-marker {
+  background: linear-gradient(to bottom, var(--rust-dim) 75%, transparent);
+}
+.tl-item.is-phase.is-ongoing .tl-marker::after { display: none; }
 
 .tl-item.is-star .tl-marker { font-size: 13px; }
 .tl-item.is-star.is-star-lg .tl-marker { font-size: 22px; }

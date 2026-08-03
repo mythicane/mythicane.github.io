@@ -69,129 +69,194 @@
       the NYU Center for Robotics &amp; Embodied Intelligence, to teaching robots how to manipulate
       clothing intelligently at Silana. Follow me on my journey to make field robotics intelligent.
     </p>
-    <div class="tl-caption reveal">A timeline, roughly</div>
-    <div class="career-timeline reveal-stagger">
-      <div class="tl-item is-phase reveal">
-        <span class="tl-marker"></span>
-        <span class="tl-date">2016 – 2020</span>
-        <h4 class="tl-h">First robotics competition</h4>
-        <p class="tl-n">Award: 2019 World Championship Qualifier</p>
+    <div class="tl-caption reveal">Scroll to explore — the robot keeps pace</div>
+
+    <div class="h-timeline reveal">
+      <div class="robot-lane" aria-hidden="true">
+        <div class="robot-pos" id="tl-robot-pos">
+          <svg class="robot" id="tl-robot" viewBox="0 0 140 80" width="86" height="50">
+            <rect class="rb-torso" x="30" y="20" width="72" height="26" rx="13"></rect>
+            <circle class="rb-head" cx="104" cy="26" r="10"></circle>
+            <circle class="rb-eye" cx="108" cy="22" r="2.2"></circle>
+            <rect class="rb-antenna" x="24" y="16" width="10" height="4" rx="2"></rect>
+            <g class="rb-leg rb-leg-1" style="transform-origin:50px 46px">
+              <line x1="50" y1="46" x2="50" y2="72"></line>
+              <circle class="rb-foot" cx="50" cy="72" r="3"></circle>
+            </g>
+            <g class="rb-leg rb-leg-2" style="transform-origin:88px 46px">
+              <line x1="88" y1="46" x2="88" y2="72"></line>
+              <circle class="rb-foot" cx="88" cy="72" r="3"></circle>
+            </g>
+            <g class="rb-leg rb-leg-3" style="transform-origin:58px 46px">
+              <line x1="58" y1="46" x2="58" y2="72"></line>
+              <circle class="rb-foot rb-foot-dim" cx="58" cy="72" r="3"></circle>
+            </g>
+            <g class="rb-leg rb-leg-4" style="transform-origin:80px 46px">
+              <line x1="80" y1="46" x2="80" y2="72"></line>
+              <circle class="rb-foot rb-foot-dim" cx="80" cy="72" r="3"></circle>
+            </g>
+          </svg>
+        </div>
       </div>
 
-      <div class="tl-item is-star reveal">
-        <span class="tl-marker">&#9733;</span>
-        <span class="tl-date">June 2018</span>
-        <h4 class="tl-h">Studied abroad in Hamburg</h4>
-        <p class="tl-n">Colonia School of Languages</p>
+      <div class="h-scroll" id="tl-hscroll" tabindex="0" aria-label="Career timeline — scroll horizontally">
+        <div class="h-track">
+          <div class="ht-axis-line"></div>
+
+          <div class="ht-phase" style="grid-column:1 / span 3">
+            <span class="ht-phase-date">2016 – 2020</span>
+            First robotics competition — 2019 World Championship Qualifier
+          </div>
+
+          <div class="ht-point" style="--col:2">
+            <span class="ht-dot">&#9733;</span>
+            <div class="ht-copy">
+              <span class="ht-date">June 2018</span>
+              <h4 class="ht-title">Studied abroad in Hamburg</h4>
+              <p class="ht-note">Colonia School of Languages</p>
+            </div>
+          </div>
+
+          <div class="ht-point" style="--col:3">
+            <span class="ht-dot">&#9733;</span>
+            <div class="ht-copy">
+              <span class="ht-date">May 2020</span>
+              <h4 class="ht-title">Trained my first CNN</h4>
+            </div>
+          </div>
+
+          <div class="ht-phase" style="grid-column:4 / span 6">
+            <span class="ht-phase-date">2020 – 2024</span>
+            BSc, Mechanical Engineering &amp; AI — RPI · Garnet D. Baltimore Research &amp; Entrepreneurship Scholar
+          </div>
+
+          <div class="ht-point is-star-lg" style="--col:5">
+            <span class="ht-dot">&#9733;</span>
+            <div class="ht-copy">
+              <span class="ht-date">2021</span>
+              <h4 class="ht-title">Founded RSEI</h4>
+              <p class="ht-note">Rensselaer Society of Engineering Innovation</p>
+            </div>
+          </div>
+
+          <div class="ht-point" style="--col:6">
+            <span class="ht-dot">&#9733;</span>
+            <div class="ht-copy">
+              <span class="ht-date">July 2021</span>
+              <h4 class="ht-title">NASA Proposal Writing &amp; Evaluation Experience</h4>
+              <p class="ht-note">Won top 6 proposals</p>
+            </div>
+          </div>
+
+          <div class="ht-point" style="--col:7">
+            <span class="ht-dot">&#9733;</span>
+            <div class="ht-copy">
+              <span class="ht-date">Jan 2022 – Dec 2023</span>
+              <h4 class="ht-title">Undergrad Researcher</h4>
+              <p class="ht-note">Rensselaer Center for Modelling, Simulation &amp; Imaging in Medicine</p>
+            </div>
+          </div>
+
+          <div class="ht-point is-star-sm" style="--col:8">
+            <span class="ht-dot">&#9733;</span>
+            <div class="ht-copy">
+              <span class="ht-date">2022</span>
+              <h4 class="ht-title">RSEI Presidency</h4>
+            </div>
+          </div>
+
+          <div class="ht-point" style="--col:9">
+            <span class="ht-dot">&#9733;</span>
+            <div class="ht-copy">
+              <span class="ht-date">Jan – May 2023</span>
+              <h4 class="ht-title">Studied abroad in Barcelona</h4>
+              <p class="ht-note">Robotics Intern, Institute for Advanced Architecture of Catalonia</p>
+            </div>
+          </div>
+
+          <div class="ht-phase" style="grid-column:10 / span 7">
+            <span class="ht-phase-date">2024 – 2026</span>
+            MSc, Robotics — NYU · HITEC / Ford Fund / Hispanic Fund Scholar. Applied Dynamics &amp; Optimization Lab ('24–25); Lab for Autonomous &amp; Intelligent Robotics ('26)
+          </div>
+
+          <div class="ht-point" style="--col:11">
+            <span class="ht-dot">&#9733;</span>
+            <div class="ht-copy">
+              <span class="ht-date">Sept 2024</span>
+              <h4 class="ht-title">NLP Data Scientist</h4>
+              <p class="ht-note">StoryForge</p>
+            </div>
+          </div>
+
+          <div class="ht-point" style="--col:12">
+            <span class="ht-dot">&#9733;</span>
+            <div class="ht-copy">
+              <span class="ht-date">2024</span>
+              <h4 class="ht-title">Live-In Advisorship — RSEI</h4>
+            </div>
+          </div>
+
+          <div class="ht-phase lane2 is-ongoing" style="grid-column:13 / span 7">
+            <span class="ht-phase-date">2024 – present</span>
+            Alumni Board of Directors — RSEI
+          </div>
+
+          <div class="ht-point is-emoji" style="--col:14">
+            <span class="ht-dot">&#128214;</span>
+            <div class="ht-copy">
+              <span class="ht-date">June 2025</span>
+              <h4 class="ht-title">Worked at a bookstore</h4>
+            </div>
+          </div>
+
+          <div class="ht-point" style="--col:15">
+            <span class="ht-dot">&#9733;</span>
+            <div class="ht-copy">
+              <span class="ht-date">June 2025</span>
+              <h4 class="ht-title">Deep Tech Analyst</h4>
+              <p class="ht-note">NYU Stern Endless Frontier Labs</p>
+            </div>
+          </div>
+
+          <div class="ht-point" style="--col:16">
+            <span class="ht-dot">&#9733;</span>
+            <div class="ht-copy">
+              <span class="ht-date">Dec 2025</span>
+              <h4 class="ht-title">NYU CREI Inauguration</h4>
+              <p class="ht-note">Poster presentation</p>
+            </div>
+          </div>
+
+          <div class="ht-point" style="--col:17">
+            <span class="ht-dot">&#9733;</span>
+            <div class="ht-copy">
+              <span class="ht-date">June 2026</span>
+              <h4 class="ht-title">Malta</h4>
+              <p class="ht-note">Intelligence for Marine Archaeology Mission</p>
+            </div>
+          </div>
+
+          <div class="ht-point is-emoji" style="--col:18">
+            <span class="ht-dot">&#128026;</span>
+            <div class="ht-copy">
+              <span class="ht-date">July 2026</span>
+              <h4 class="ht-title">Completed the Camino de Santiago</h4>
+              <p class="ht-note">128 km</p>
+            </div>
+          </div>
+
+          <div class="ht-point is-emoji is-final" style="--col:19">
+            <span class="ht-dot">&#127891;</span>
+            <div class="ht-copy">
+              <span class="ht-date">Now</span>
+              <h4 class="ht-title">Applying for my PhD in Robotics!!</h4>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="tl-item is-star reveal">
-        <span class="tl-marker">&#9733;</span>
-        <span class="tl-date">May 2020</span>
-        <h4 class="tl-h">Trained my first CNN</h4>
-      </div>
-
-      <div class="tl-item is-phase reveal">
-        <span class="tl-marker"></span>
-        <span class="tl-date">2020 – 2024</span>
-        <h4 class="tl-h">BSc, Mechanical Engineering &amp; AI — RPI</h4>
-        <p class="tl-n">Garnet D. Baltimore Research &amp; Entrepreneurship Scholar</p>
-      </div>
-
-      <div class="tl-item is-star is-star-lg reveal">
-        <span class="tl-marker">&#9733;</span>
-        <span class="tl-date">2021</span>
-        <h4 class="tl-h">Founded the Rensselaer Society of Engineering Innovation (RSEI)</h4>
-      </div>
-
-      <div class="tl-item is-star reveal">
-        <span class="tl-marker">&#9733;</span>
-        <span class="tl-date">July 2021</span>
-        <h4 class="tl-h">NASA Proposal Writing &amp; Evaluation Experience</h4>
-        <p class="tl-n">Won top 6 proposals</p>
-      </div>
-
-      <div class="tl-item is-star reveal">
-        <span class="tl-marker">&#9733;</span>
-        <span class="tl-date">Jan 2022 – Dec 2023</span>
-        <h4 class="tl-h">Undergraduate Researcher — Rensselaer Center for Modelling, Simulation &amp; Imaging in Medicine</h4>
-      </div>
-
-      <div class="tl-item is-star is-star-sm reveal">
-        <span class="tl-marker">&#9733;</span>
-        <span class="tl-date">2022</span>
-        <h4 class="tl-h">RSEI Presidency</h4>
-      </div>
-
-      <div class="tl-item is-star reveal">
-        <span class="tl-marker">&#9733;</span>
-        <span class="tl-date">Jan – May 2023</span>
-        <h4 class="tl-h">Studied abroad in Barcelona</h4>
-        <p class="tl-n">Robotics Intern, Institute for Advanced Architecture of Catalonia</p>
-      </div>
-
-      <div class="tl-item is-phase reveal">
-        <span class="tl-marker"></span>
-        <span class="tl-date">2024 – 2026</span>
-        <h4 class="tl-h">MSc, Robotics — NYU</h4>
-        <p class="tl-n">HITEC · Ford Fund · Hispanic Fund Scholar. Applied Dynamics &amp; Optimization Lab (2024–25); Lab for Autonomous &amp; Intelligent Robotics (2026)</p>
-      </div>
-
-      <div class="tl-item is-star reveal">
-        <span class="tl-marker">&#9733;</span>
-        <span class="tl-date">Sept 2024</span>
-        <h4 class="tl-h">NLP Data Scientist — StoryForge</h4>
-      </div>
-
-      <div class="tl-item is-star reveal">
-        <span class="tl-marker">&#9733;</span>
-        <span class="tl-date">2024</span>
-        <h4 class="tl-h">Live-In Advisorship — RSEI</h4>
-      </div>
-
-      <div class="tl-item is-phase is-ongoing reveal">
-        <span class="tl-marker"></span>
-        <span class="tl-date">2024 – present</span>
-        <h4 class="tl-h">Alumni Board of Directors — RSEI</h4>
-      </div>
-
-      <div class="tl-item is-emoji reveal">
-        <span class="tl-marker">&#128214;</span>
-        <span class="tl-date">June 2025</span>
-        <h4 class="tl-h">Worked at a bookstore</h4>
-      </div>
-
-      <div class="tl-item is-star reveal">
-        <span class="tl-marker">&#9733;</span>
-        <span class="tl-date">June 2025</span>
-        <h4 class="tl-h">Deep Tech Analyst — NYU Stern Endless Frontier Labs</h4>
-      </div>
-
-      <div class="tl-item is-star reveal">
-        <span class="tl-marker">&#9733;</span>
-        <span class="tl-date">Dec 2025</span>
-        <h4 class="tl-h">NYU Center for Robotics &amp; Embodied Intelligence Inauguration</h4>
-        <p class="tl-n">Poster presentation</p>
-      </div>
-
-      <div class="tl-item is-star reveal">
-        <span class="tl-marker">&#9733;</span>
-        <span class="tl-date">June 2026</span>
-        <h4 class="tl-h">Malta — Intelligence for Marine Archaeology Mission</h4>
-      </div>
-
-      <div class="tl-item is-emoji reveal">
-        <span class="tl-marker">&#128026;</span>
-        <span class="tl-date">July 2026</span>
-        <h4 class="tl-h">Completed the Camino de Santiago</h4>
-        <p class="tl-n">128 km</p>
-      </div>
-
-      <div class="tl-item is-emoji is-final reveal">
-        <span class="tl-marker">&#127891;</span>
-        <span class="tl-date">Now</span>
-        <h4 class="tl-h">Applying for my PhD in Robotics!!</h4>
-      </div>
+      <div class="h-progress"><div class="h-progress-fill" id="tl-progress-fill"></div></div>
+      <div class="h-hint">Scroll or drag through — the robot's stride speed matches yours.</div>
     </div>
   </section>
 

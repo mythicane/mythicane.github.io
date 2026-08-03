@@ -550,28 +550,29 @@ body.on-dark .menu-btn { color: #fbf7ee; }
   border-radius: 100px 4px 4px 100px;
 }
 
-.ht-point { display: contents; }
-.ht-point .ht-dot {
+/* Marker and copy are genuine direct children of .h-track (each carries
+   its own inline grid-column) rather than being grid-placed through a
+   `display:contents` wrapper — that pattern is unreliable across browsers
+   when combined with Grid item promotion, so we avoid it entirely. */
+.ht-dot {
   grid-row: 3;
-  grid-column: var(--col);
   align-self: center;
   justify-self: center;
   font-size: 13px;
   line-height: 1;
   color: var(--rust);
 }
-.ht-point.is-star-lg .ht-dot { font-size: 22px; }
-.ht-point.is-star-sm .ht-dot { font-size: 9px; }
-.ht-point.is-emoji .ht-dot { font-size: 16px; }
-.ht-point.is-final .ht-dot { font-size: 20px; }
+.ht-dot.is-star-lg { font-size: 22px; }
+.ht-dot.is-star-sm { font-size: 9px; }
+.ht-dot.is-emoji { font-size: 16px; }
+.ht-dot.is-final { font-size: 20px; }
 
-.ht-point .ht-copy {
+.ht-copy {
   grid-row: 4;
-  grid-column: var(--col);
   text-align: center;
   padding: 0 4px;
 }
-.ht-point .ht-date {
+.ht-copy .ht-date {
   font-family: var(--font-display);
   font-style: italic;
   color: var(--rust);
@@ -579,7 +580,7 @@ body.on-dark .menu-btn { color: #fbf7ee; }
   display: block;
   margin-bottom: 3px;
 }
-.ht-point .ht-title {
+.ht-copy .ht-title {
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 13px;
@@ -587,8 +588,8 @@ body.on-dark .menu-btn { color: #fbf7ee; }
   margin: 0 0 2px;
   line-height: 1.35;
 }
-.ht-point.is-final .ht-title { font-size: 14.5px; color: var(--rust); }
-.ht-point .ht-note {
+.ht-copy.is-final .ht-title { font-size: 14.5px; color: var(--rust); }
+.ht-copy .ht-note {
   font-size: 11.5px;
   color: var(--ink-soft);
   margin: 0;

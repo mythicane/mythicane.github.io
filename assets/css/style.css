@@ -466,7 +466,7 @@ body.on-dark .menu-btn { color: #fbf7ee; }
 .career-timeline::before {
   content: "";
   position: absolute;
-  left: 9px;
+  left: 29px;
   top: 6px;
   bottom: 10px;
   width: 1px;
@@ -475,14 +475,14 @@ body.on-dark .menu-btn { color: #fbf7ee; }
 
 .tl-item {
   position: relative;
-  padding-left: 34px;
+  padding-left: 50px;
   padding-bottom: 22px;
 }
 .tl-item:last-child { padding-bottom: 0; }
 
 .tl-item .tl-marker {
   position: absolute;
-  left: 0;
+  left: 20px;
   top: 3px;
   width: 18px;
   height: 18px;
@@ -494,11 +494,12 @@ body.on-dark .menu-btn { color: #fbf7ee; }
   color: var(--rust);
 }
 
-/* Phase entries (degrees, ongoing roles, multi-year stints) render as a
-   vertical bar spanning the item's height, capped with small dots, so a
-   span reads as a duration rather than a single point on the axis. */
+/* Phase entries (degrees, ongoing roles, multi-year stints) get their own
+   lane on the far left, clear of the point markers' shared axis, and
+   render as a vertical bar spanning the item's height, capped with small
+   dots, so a span reads as a duration rather than a single point. */
 .tl-item.is-phase .tl-marker {
-  left: 7px;
+  left: 0;
   top: 5px;
   bottom: 5px;
   width: 3px;

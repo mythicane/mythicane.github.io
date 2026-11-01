@@ -135,100 +135,16 @@
   updateFill();
 })();
 
-/* ---------- horizontal career timeline + running robot ---------- */
+/* ---------- CV button: switches on once assets/pdf/cv.pdf exists ---------- */
 
-(function initCareerTimeline() {
-  const scrollEl = document.getElementById('tl-hscroll');
-  const track = scrollEl ? scrollEl.querySelector('.h-track') : null;
-  const lane = document.querySelector('.robot-lane');
-  const robotPos = document.getElementById('tl-robot-pos');
-  const robot = document.getElementById('tl-robot');
-  const progressFill = document.getElementById('tl-progress-fill');
-  if (!scrollEl || !track || !lane || !robotPos || !robot) return;
-
-  const legs = Array.from(robot.querySelectorAll('.rb-leg'));
-
-  let speed = 0; // decaying "energy" driving stride amplitude/rate
-  let phase = 0;
-  let direction = 1;
-  let lastScrollLeft = scrollEl.scrollLeft;
-  let robotX = 0;
-
-  function maxScroll() {
-    return Math.max(track.scrollWidth - scrollEl.clientWidth, 1);
-  }
-
-  function updateFromScroll() {
-    const sl = scrollEl.scrollLeft;
-    const delta = sl - lastScrollLeft;
-    lastScrollLeft = sl;
-    if (Math.abs(delta) > 0.4) {
-      direction = delta > 0 ? 1 : -1;
-      speed = Math.min(speed + Math.abs(delta), 70);
-    }
-    const progress = sl / maxScroll();
-    if (progressFill) progressFill.style.width = progress * 100 + '%';
-    const laneWidth = lane.clientWidth;
-    const robotWidth = robot.getBoundingClientRect().width || 86;
-    robotX = progress * Math.max(laneWidth - robotWidth, 0);
-  }
-
-  // Redirect normal vertical wheel scrolling into horizontal movement while
-  // hovering the strip, so it behaves like the rest of the page to scroll.
-  scrollEl.addEventListener(
-    'wheel',
-    (e) => {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        scrollEl.scrollLeft += e.deltaY;
-        e.preventDefault();
-      }
-    },
-    { passive: false }
-  );
-
-  // Click-and-drag panning for mouse users.
-  let dragging = false;
-  let dragStartX = 0;
-  let dragStartScroll = 0;
-  scrollEl.addEventListener('pointerdown', (e) => {
-    dragging = true;
-    dragStartX = e.clientX;
-    dragStartScroll = scrollEl.scrollLeft;
-    scrollEl.classList.add('grabbing');
-  });
-  window.addEventListener('pointermove', (e) => {
-    if (!dragging) return;
-    scrollEl.scrollLeft = dragStartScroll - (e.clientX - dragStartX);
-  });
-  window.addEventListener('pointerup', () => {
-    dragging = false;
-    scrollEl.classList.remove('grabbing');
-  });
-
-  scrollEl.addEventListener('scroll', updateFromScroll, { passive: true });
-  window.addEventListener('resize', updateFromScroll);
-
-  function frame() {
-    phase += speed * 0.05 * direction;
-    speed *= 0.9;
-    if (speed < 0.03) speed = 0;
-
-    const amplitude = 8 + Math.min(speed, 40) * 0.55;
-    legs.forEach((leg, i) => {
-      const offset = i === 0 || i === 3 ? 0 : Math.PI;
-      const swing = Math.sin(phase + offset);
-      leg.style.transform = `rotate(${swing * amplitude}deg)`;
-    });
-
-    const bob = speed > 0.5 ? Math.abs(Math.sin(phase)) * 3 : 0;
-    robotPos.style.transform = `translateX(${robotX}px)`;
-    robot.style.transform = `scaleX(${direction}) translateY(${-bob}px)`;
-
-    requestAnimationFrame(frame);
-  }
-
-  updateFromScroll();
-  requestAnimationFrame(frame);
+(function initCv() {
+  const btn = document.getElementById('cv-btn');
+  if (!btn || !window.fetch) return;
+  fetch(btn.getAttribute('href'), { method: 'HEAD' })
+    .then((r) => {
+      if (r.ok) { btn.classList.remove('is-pending'); btn.removeAttribute('aria-disabled'); }
+    })
+    .catch(() => {});
 })();
 
 /* ---------- poster lightbox ---------- */

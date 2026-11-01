@@ -6,8 +6,8 @@ Personal portfolio site — plain HTML/CSS/JS, no build step, no dependencies. H
 
 | File | Section |
 |---|---|
-| `index.html` | Home — hero reel, artist statement, selected-work grid |
-| `poster-session.html` | Poster Session — click-through poster gallery with lightbox |
+| `index.html` | Home — full-screen hero reel, About (headshot, profile links, CV button), section bars |
+| `poster-session.html` | Old poster gallery — no longer linked from the menu (Publications replaced it) |
 | `publications.html` | Publications — title / description / link |
 | `projects.html` | Projects — title / description / links |
 | `fiction.html` | Fiction — title / description / PDF |
@@ -19,11 +19,14 @@ Personal portfolio site — plain HTML/CSS/JS, no build step, no dependencies. H
 
 Everything is currently placeholder — gradients standing in for photos/posters, and `— untitled —` text standing in for real copy. Look for the `.placeholder-note` box at the top of each page's content for exactly what to swap.
 
-- **Hero reel** — see `assets/video/README.md`. Drop `reel.mp4` (and a `hero-poster.jpg`) in and it plays automatically.
+- **Hero reel** — replace the placeholder `assets/video/reel.mp4` (and `assets/img/hero-poster.jpg`) with your own; same names, no code changes. See `assets/video/README.md`.
+- **Headshot** — add `assets/img/headshot.jpg` (square). It replaces the placeholder circle automatically.
+- **CV** — add `assets/pdf/cv.pdf`. The "Download academic CV" button switches on by itself.
+- **Google Scholar / OpenReview / ORCID** — in `index.html`, change `<span class="pl soon">Name <small>soon</small></span>` to `<a class="pl" href="URL" target="_blank" rel="noopener">Name</a>`.
 - **Photos / posters** — each placeholder is a `<div>` with an inline CSS gradient (`style="--tc1:...;--tc2:..."` or `--pc1`/`--pc2`). Replace the `<div>` with an `<img src="assets/img/your-photo.jpg" alt="...">`, or keep the div and set `background-image` instead of the gradient — either works with the existing sizing/hover CSS.
 - **Text entries** (Publications/Projects/Fiction/Mentorship/Blog) — each is one `.entry` block in the relevant `.html` file; copy/paste one to add more rows.
 - **Poster session** — each `.poster-card` button carries `data-title`/`data-desc` attributes that feed the lightbox; edit those plus the `.poster-frame` gradient/image.
-- **Timeline** — each `.timeline-entry` in `gallery.html`; add the `flip` class to alternate which side the photo/copy sits on.
+- **Gallery timeline** — each `.timeline-entry` in `gallery.html`; add the `flip` class to alternate which side the photo/copy sits on.
 
 ## Running locally
 
@@ -48,6 +51,8 @@ To point a real domain (e.g. `gretaperezhaiek.com`) at this site instead of `myt
 
 ## Design notes
 
+- Palette: earthy — moss green `--moss`, river blue `--river`, dusty rose `--rose`, bark brown `--bark` (top of `assets/css/style.css`).
+
 - Fonts: [Fraunces](https://fonts.google.com/specimen/Fraunces) (display/serif) + [Inter](https://fonts.google.com/specimen/Inter) (body), loaded from Google Fonts.
 - Color system and all component styles live in `assets/css/style.css` as CSS custom properties at the top — change the palette there.
-- All interactivity (overlay menu, scroll reveals, hero parallax, timeline progress line, poster lightbox) is in `assets/js/main.js`, vanilla JS, no dependencies.
+- All interactivity (overlay menu, scroll reveals, hero parallax, gallery timeline progress line, poster lightbox, CV-button check) is in `assets/js/main.js`, vanilla JS, no dependencies.

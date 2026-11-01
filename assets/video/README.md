@@ -9,6 +9,6 @@ behind the homepage hero — no code changes needed.
 - Length: 10–30s looping clip reads best; keep the file under ~15MB so it loads fast (compress with `ffmpeg -i in.mov -vcodec h264 -crf 28 -an reel.mp4`)
 - Also add a `hero-poster.jpg` in `assets/img/` (a single representative frame) — it shows instantly while the video loads
 
-Until `reel.mp4` exists, the hero falls back to an animated gradient
-placeholder (see `.kenburns` in `assets/css/style.css`) — nothing breaks, it just
-won't be your real footage yet.
+`reel.mp4` is currently a 12 s placeholder (slowly moving earthy gradient with
+"REEL PLACEHOLDER" written on it). Overwrite it with your reel under the same name.
+It fills the whole screen behind "Embodied / Into the ...", cropped to fit.

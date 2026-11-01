@@ -492,8 +492,9 @@ a.pl:hover { background: var(--moss); border-color: var(--moss); color: #f8f4ea;
   font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
   color: var(--bark); background: var(--rose-soft); border-radius: 100px; padding: 2px 7px;
 }
+.doc-btns { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 22px; }
 .cv-btn {
-  display: inline-flex; align-items: center; gap: 10px; margin-top: 22px;
+  display: inline-flex; align-items: center; gap: 10px;
   padding: 13px 22px; border-radius: 100px;
   background: var(--moss); color: #f8f4ea; text-decoration: none; font-weight: 600; font-size: 15px;
   transition: background .2s, transform .2s;

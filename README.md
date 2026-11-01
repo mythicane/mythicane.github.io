@@ -21,7 +21,7 @@ Everything is currently placeholder — gradients standing in for photos/posters
 
 - **Hero reel** — replace the placeholder `assets/video/reel.mp4` (and `assets/img/hero-poster.jpg`) with your own; same names, no code changes. See `assets/video/README.md`.
 - **Headshot** — add `assets/img/headshot.jpg` (square). It replaces the placeholder circle automatically.
-- **CV** — add `assets/pdf/cv.pdf`. The "Download academic CV" button switches on by itself.
+- **CV / Statement of Purpose** — add `assets/pdf/cv.pdf` and `assets/pdf/statement-of-purpose.pdf`. Each download button switches on by itself.
 - **Twitch** — https://www.twitch.tv/gretonthatgrind (shown as "soon" until the channel is refreshed; same swap as below).
 - **Google Scholar / OpenReview / ORCID** — in `index.html`, change `<span class="pl soon">Name <small>soon</small></span>` to `<a class="pl" href="URL" target="_blank" rel="noopener">Name</a>`.
 - **Photos / posters** — each placeholder is a `<div>` with an inline CSS gradient (`style="--tc1:...;--tc2:..."` or `--pc1`/`--pc2`). Replace the `<div>` with an `<img src="assets/img/your-photo.jpg" alt="...">`, or keep the div and set `background-image` instead of the gradient — either works with the existing sizing/hover CSS.

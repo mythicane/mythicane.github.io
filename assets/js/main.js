@@ -135,16 +135,17 @@
   updateFill();
 })();
 
-/* ---------- CV button: switches on once assets/pdf/cv.pdf exists ---------- */
+/* ---------- document buttons (CV, Statement of Purpose): switch on once the PDF exists ---------- */
 
-(function initCv() {
-  const btn = document.getElementById('cv-btn');
-  if (!btn || !window.fetch) return;
-  fetch(btn.getAttribute('href'), { method: 'HEAD' })
-    .then((r) => {
-      if (r.ok) { btn.classList.remove('is-pending'); btn.removeAttribute('aria-disabled'); }
-    })
-    .catch(() => {});
+(function initDocButtons() {
+  if (!window.fetch) return;
+  document.querySelectorAll('.cv-btn.is-pending').forEach((btn) => {
+    fetch(btn.getAttribute('href'), { method: 'HEAD' })
+      .then((r) => {
+        if (r.ok) { btn.classList.remove('is-pending'); btn.removeAttribute('aria-disabled'); }
+      })
+      .catch(() => {});
+  });
 })();
 
 /* ---------- poster lightbox ---------- */

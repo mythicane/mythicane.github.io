@@ -417,6 +417,22 @@ body.on-dark .menu-btn { color: #fbf7ee; }
   margin-top: 10px;
 }
 
+.intro-para {
+  max-width: 68ch;
+  color: var(--ink-soft);
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.75;
+  padding-top: 48px;
+  padding-bottom: 8px;
+}
+.intro-para a { color: var(--ink); text-decoration-color: var(--line-strong); }
+.intro-para a:hover { color: var(--rust); }
+
+.fiction-empty { max-width: var(--container); margin: 0 auto; padding: 60px var(--gutter) 160px; text-align: center; }
+.fiction-empty-emoji { font-size: 44px; margin-bottom: 22px; }
+.fiction-empty-line { font-family: var(--font-display); font-style: italic; font-size: clamp(22px, 3vw, 32px); margin: 0 0 10px; }
+.fiction-empty-sub { color: var(--ink-soft); font-size: 15px; }
+
 /* ---------- statement / intro section ---------- */
 
 .statement {
@@ -467,7 +483,7 @@ body.on-dark .menu-btn { color: #fbf7ee; }
   align-items: start;
 }
 .headshot {
-  position: relative; aspect-ratio: 1; border-radius: 50%; overflow: hidden;
+  position: relative; aspect-ratio: 1; border-radius: 6px; overflow: hidden;
   background: radial-gradient(circle at 30% 30%, var(--rose-soft), var(--rose) 45%, var(--bark) 100%);
   box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--line-strong);
   display: flex; align-items: center; justify-content: center;
@@ -659,6 +675,7 @@ a.pl:hover { background: var(--moss); border-color: var(--moss); color: #f8f4ea;
 /* ---------- entry list (Publications / Projects / Fiction / Mentorship / Blog) ---------- */
 
 .entry-list { display: flex; flex-direction: column; }
+.entry-list-more { margin-top: 30px; }
 .entry {
   display: grid;
   grid-template-columns: 120px 1fr auto;
@@ -870,7 +887,11 @@ a.pl:hover { background: var(--moss); border-color: var(--moss); color: #f8f4ea;
   border-radius: 4px;
   background: linear-gradient(150deg, var(--tc1, #56693c), var(--tc2, #3d6475));
   grid-column: 1;
+  overflow: hidden;
 }
+.timeline-entry .tl-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.timeline-entry .tl-photo.dual { display: flex; gap: 4px; }
+.timeline-entry .tl-photo.dual img { flex: 1; min-width: 0; }
 .timeline-entry .tl-copy { grid-column: 3; }
 .timeline-entry.flip .tl-photo { grid-column: 3; }
 .timeline-entry.flip .tl-copy { grid-column: 1; text-align: right; }

@@ -92,49 +92,6 @@
   );
 })();
 
-/* ---------- timeline scroll progress ---------- */
-
-(function initTimeline() {
-  const axis = document.querySelector('.timeline-axis');
-  const fill = document.querySelector('.timeline-axis-fill');
-  const entries = document.querySelectorAll('.timeline-entry');
-  if (!axis || !entries.length) return;
-
-  const io = new IntersectionObserver(
-    (list) => {
-      list.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('in-view');
-      });
-    },
-    { threshold: 0.4 }
-  );
-  entries.forEach((el) => io.observe(el));
-
-  function updateFill() {
-    const rect = axis.getBoundingClientRect();
-    const vh = window.innerHeight;
-    const visibleTop = Math.min(Math.max(vh * 0.5 - rect.top, 0), rect.height);
-    const pct = rect.height > 0 ? (visibleTop / rect.height) * 100 : 0;
-    if (fill) fill.style.setProperty('--progress', pct + '%');
-  }
-
-  let ticking = false;
-  window.addEventListener(
-    'scroll',
-    () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        updateFill();
-        ticking = false;
-      });
-    },
-    { passive: true }
-  );
-  window.addEventListener('resize', updateFill);
-  updateFill();
-})();
-
 /* ---------- document buttons (CV, Statement of Purpose): switch on once the PDF exists ---------- */
 
 (function initDocButtons() {

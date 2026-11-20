@@ -456,6 +456,21 @@ body.on-dark .menu-btn { color: #fbf7ee; }
   line-height: 1.75;
   max-width: 62ch;
 }
+.statement .statement-list {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  color: var(--ink-soft);
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.6;
+  max-width: 62ch;
+}
+.statement .statement-list li { position: relative; padding-left: 22px; margin-bottom: 10px; }
+.statement .statement-list li::before { content: "—"; position: absolute; left: 0; color: var(--rust); }
+
+.contact-line { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; font-size: 13.5px; color: var(--ink-soft); }
+.contact-line a { color: var(--ink-soft); }
+.contact-line a:hover { color: var(--rust); }
 .statement .statement-meta {
   margin-top: 28px;
   display: flex;
@@ -847,94 +862,28 @@ a.pl:hover { background: var(--moss); border-color: var(--moss); color: #f8f4ea;
 .lightbox-next { right: clamp(10px, 3vw, 40px); top: 50%; transform: translateY(-50%); }
 .lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover { border-color: #fbf7ee; }
 
-/* ---------- Photo gallery timeline ---------- */
+/* ---------- Photo gallery board ---------- */
 
-.timeline {
-  position: relative;
-  padding: 0 var(--gutter) 140px;
+.gallery-board {
   max-width: var(--container);
   margin: 0 auto;
+  padding: 0 var(--gutter) 140px;
+  column-count: 3;
+  column-gap: clamp(16px, 2.2vw, 28px);
 }
-.timeline-axis {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 140px;
-  width: 2px;
-  background: var(--line);
-  transform: translateX(-50%);
-}
-.timeline-axis-fill {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: var(--progress, 0%);
-  background: var(--rust);
-  transition: height 0.08s linear;
-}
+@media (max-width: 900px) { .gallery-board { column-count: 2; } }
+@media (max-width: 560px) { .gallery-board { column-count: 1; } }
 
-.timeline-entry {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 60px 1fr;
-  align-items: center;
-  gap: 0 34px;
-  padding: 56px 0;
+.gallery-tile {
+  break-inside: avoid;
+  margin: 0 0 clamp(16px, 2.2vw, 28px);
 }
-.timeline-entry .tl-photo {
-  aspect-ratio: 4/3;
-  border-radius: 4px;
-  background: linear-gradient(150deg, var(--tc1, #56693c), var(--tc2, #3d6475));
-  grid-column: 1;
-  overflow: hidden;
-}
-.timeline-entry .tl-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
-.timeline-entry .tl-photo.dual { display: flex; gap: 4px; }
-.timeline-entry .tl-photo.dual img { flex: 1; min-width: 0; }
-.timeline-entry .tl-copy { grid-column: 3; }
-.timeline-entry.flip .tl-photo { grid-column: 3; }
-.timeline-entry.flip .tl-copy { grid-column: 1; text-align: right; }
-
-.timeline-entry .tl-node {
-  grid-column: 2;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--paper);
-  border: 2px solid var(--line-strong);
-  justify-self: center;
-  position: relative;
-  z-index: 1;
-  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-.timeline-entry.in-view .tl-node {
-  background: var(--rust);
-  border-color: var(--rust);
-  transform: scale(1.25);
-}
-
-.timeline-entry .tl-year {
-  font-family: var(--font-display);
-  font-style: italic;
-  color: var(--rust);
-  font-size: 15px;
-  margin-bottom: 8px;
-  display: block;
-}
-.timeline-entry .tl-title { font-size: clamp(19px, 2.2vw, 25px); margin: 0 0 8px; }
-.timeline-entry .tl-desc { color: var(--ink-soft); font-size: 14.5px; max-width: 46ch; }
-.timeline-entry.flip .tl-desc { margin-left: auto; }
-
-@media (max-width: 780px) {
-  .timeline-axis { left: 22px; }
-  .timeline-entry, .timeline-entry.flip {
-    grid-template-columns: 44px 1fr;
-    text-align: left !important;
-  }
-  .timeline-entry .tl-node, .timeline-entry.flip .tl-node { grid-column: 1; }
-  .timeline-entry .tl-photo, .timeline-entry.flip .tl-photo { grid-column: 2; }
-  .timeline-entry .tl-copy, .timeline-entry.flip .tl-copy { grid-column: 2; margin-left: 0 !important; }
+.gallery-tile img { width: 100%; display: block; border-radius: 4px; }
+.gallery-tile figcaption {
+  margin-top: 8px;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
 }
 
 /* ---------- footer ---------- */

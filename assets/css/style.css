@@ -428,10 +428,15 @@ body.on-dark .menu-btn { color: #fbf7ee; }
 .intro-para a { color: var(--ink); text-decoration-color: var(--line-strong); }
 .intro-para a:hover { color: var(--rust); }
 
-.pdf-embed { padding-bottom: 140px; }
+.pdf-embed {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-bottom: 160px;
+}
 .pdf-embed iframe {
   width: 100%;
-  height: 85vh;
+  height: 95vh;
+  min-height: 900px;
   border: 1px solid var(--line-strong);
   border-radius: 4px;
   display: block;
